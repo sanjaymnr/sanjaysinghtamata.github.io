@@ -1,0 +1,1451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sanjay Tamata – Technologist & Innovator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Personal website for Sanjay Tamata – technologist, cybersecurity engineer, and data-driven problem solver."
+  />
+
+  <style>
+    :root {
+      --bg: #05060a;
+      --bg-alt: #0b0d13;
+      --card: #10131c;
+      --text: #f5f5f5;
+      --muted: #a3a3b0;
+      --accent: #f9e15a;
+      --accent-soft: rgba(249, 225, 90, 0.1);
+      --border: rgba(255, 255, 255, 0.06);
+      --max-width: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      background: radial-gradient(circle at top, #141827 0, #05060a 60%);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* Layout helpers */
+
+    .page {
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    section {
+      padding: 5rem 0;
+    }
+
+    @media (min-width: 900px) {
+      section {
+        padding: 6.5rem 0;
+      }
+    }
+
+    .section-tag {
+      font-size: 0.75rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 3vw, 2.7rem);
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+    }
+
+    .section-subtitle {
+      max-width: 640px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    /* Header */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(16px);
+      background: linear-gradient(
+        to bottom,
+        rgba(5, 6, 10, 0.9),
+        rgba(5, 6, 10, 0.6),
+        transparent
+      );
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 1.5rem;
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .nav-mark {
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 20%, #ffffff, #f9e15a 40%, #161925);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      box-shadow:
+        0 0 0 1px rgba(0, 0, 0, 0.5),
+        0 18px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    .nav-name {
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .nav-role {
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 1.75rem;
+      font-size: 0.8rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .nav-link {
+      position: relative;
+    }
+
+    .nav-link::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -0.3rem;
+      width: 0;
+      height: 1px;
+      background: var(--accent);
+      transition: width 0.18s ease-out;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      border-radius: 999px;
+      border: 1px solid var(--accent);
+      padding: 0.4rem 0.9rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.75rem;
+      background: linear-gradient(
+        120deg,
+        rgba(249, 225, 90, 0.12),
+        rgba(249, 225, 90, 0.04)
+      );
+    }
+
+    .nav-cta span {
+      font-size: 0.9rem;
+    }
+
+    .nav-cta-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: #4ade80;
+      box-shadow: 0 0 0 5px rgba(74, 222, 128, 0.2);
+    }
+
+    /* Mobile nav */
+
+    .nav-menu-toggle {
+      display: none;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 0.35rem 0.7rem;
+      font-size: 0.75rem;
+      background: rgba(5, 6, 10, 0.7);
+    }
+
+    @media (max-width: 720px) {
+      .nav-right {
+        display: none;
+      }
+
+      .nav-menu-toggle {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+      }
+
+      .nav-mobile {
+        display: none;
+        flex-direction: column;
+        gap: 1.2rem;
+        padding: 1rem 1.5rem 1.4rem;
+        border-top: 1px solid var(--border);
+        font-size: 0.78rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        background: rgba(5, 6, 10, 0.96);
+      }
+
+      .nav-mobile.show {
+        display: flex;
+      }
+    }
+
+    /* Hero */
+
+    #hero {
+      padding-top: 4.5rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    @media (min-width: 900px) {
+      .hero-grid {
+        grid-template-columns: minmax(0, 3fr) minmax(0, 2.7fr);
+        gap: 3.5rem;
+      }
+    }
+
+    .hero-kickers {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.25rem;
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .hero-kicker-pill {
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(15, 19, 31, 0.85);
+    }
+
+    .hero-location {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(15, 19, 31, 0.85);
+    }
+
+    .hero-location-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 0 4px var(--accent-soft);
+    }
+
+    .hero-heading {
+      font-size: clamp(2.6rem, 5vw, 3.6rem);
+      line-height: 1.02;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .hero-heading span {
+      display: block;
+    }
+
+    .hero-tagline {
+      max-width: 520px;
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .btn-primary,
+    .btn-ghost {
+      border-radius: 999px;
+      padding: 0.75rem 1.3rem;
+      font-size: 0.85rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      cursor: pointer;
+      border: 1px solid transparent;
+    }
+
+    .btn-primary {
+      background: radial-gradient(circle at 20% 0, #ffffff, #f9e15a 40%, #f59e0b);
+      color: #18110a;
+      border-color: rgba(0, 0, 0, 0.7);
+      box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.7),
+        0 0 0 1px rgba(0, 0, 0, 0.8);
+      font-weight: 600;
+    }
+
+    .btn-ghost {
+      border-color: var(--border);
+      background: rgba(8, 10, 18, 0.7);
+      color: var(--muted);
+    }
+
+    .hero-metrics {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      font-size: 0.7rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .hero-metric-label {
+      opacity: 0.7;
+      margin-bottom: 0.1rem;
+    }
+
+    .hero-metric-value {
+      font-size: 0.9rem;
+      color: var(--text);
+    }
+
+    .hero-visual {
+      position: relative;
+      min-height: 260px;
+    }
+
+    @media (min-width: 900px) {
+      .hero-visual {
+        min-height: 320px;
+      }
+    }
+
+    .hero-card {
+      position: absolute;
+      inset: 0;
+      border-radius: 24px;
+      border: 1px solid var(--border);
+      background: radial-gradient(circle at top, #252a43 0, #05060a 60%);
+      padding: 1.4rem 1.6rem;
+      box-shadow:
+        0 24px 60px rgba(0, 0, 0, 0.85),
+        0 0 0 1px rgba(255, 255, 255, 0.02);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+    }
+
+    .hero-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .hero-avatar {
+      width: 72px;
+      height: 72px;
+      border-radius: 999px;
+      border: 2px solid rgba(255, 255, 255, 0.6);
+      background: radial-gradient(circle at 30% 10%, #ffffff, #fbbf24 30%, #1f2937);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.8);
+    }
+
+    .hero-card-title {
+      font-size: 0.85rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .hero-card-chip {
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.8rem;
+      border-radius: 999px;
+      border: 1px solid rgba(249, 225, 90, 0.9);
+      background: rgba(15, 19, 31, 0.85);
+      color: var(--accent);
+    }
+
+    .hero-card-main {
+      margin-top: 1.5rem;
+      max-width: 260px;
+    }
+
+    .hero-card-main h2 {
+      font-size: 1.15rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .hero-card-main p {
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    .hero-card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.7rem;
+      color: var(--muted);
+      margin-top: 1.75rem;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .hero-badge {
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(10, 12, 20, 0.9);
+    }
+
+    .hero-glow {
+      position: absolute;
+      inset: 40% -40% -60%;
+      background: radial-gradient(circle at 30% 0, rgba(249, 225, 90, 0.35), transparent 60%);
+      opacity: 0.8;
+      pointer-events: none;
+      mix-blend-mode: screen;
+    }
+
+    /* Story */
+
+    #story {
+      background: linear-gradient(to bottom, #05060a, #070912);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .story-grid {
+      display: grid;
+      gap: 2.5rem;
+    }
+
+    @media (min-width: 900px) {
+      .story-grid {
+        grid-template-columns: minmax(0, 1.5fr) minmax(0, 1.5fr);
+        gap: 3.5rem;
+      }
+    }
+
+    .story-body {
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .story-body p + p {
+      margin-top: 1rem;
+    }
+
+    .story-highlight {
+      margin-top: 2rem;
+      padding: 1rem 1.1rem;
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      background: linear-gradient(
+        135deg,
+        rgba(249, 225, 90, 0.14),
+        rgba(15, 18, 30, 0.9)
+      );
+      font-size: 0.85rem;
+    }
+
+    .story-highlight strong {
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 0.72rem;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .story-meta {
+      display: grid;
+      gap: 1.2rem;
+      font-size: 0.8rem;
+    }
+
+    @media (min-width: 600px) {
+      .story-meta {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    .story-meta-card {
+      padding: 1rem;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      background: radial-gradient(circle at top left, #161b2a, #05060a 60%);
+    }
+
+    .story-meta-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.4rem;
+    }
+
+    .story-meta-value {
+      font-size: 0.95rem;
+    }
+
+    /* Work / Ventures */
+
+    #work {
+      background: var(--bg);
+    }
+
+    .work-grid {
+      display: grid;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    @media (min-width: 900px) {
+      .work-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    .work-card {
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      background: linear-gradient(
+        145deg,
+        rgba(249, 225, 90, 0.09),
+        rgba(15, 18, 28, 0.98)
+      );
+      padding: 1.4rem 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      min-height: 190px;
+    }
+
+    .work-pill {
+      font-size: 0.7rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .work-title {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .work-body {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .work-link {
+      margin-top: auto;
+      font-size: 0.8rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      color: var(--accent);
+    }
+
+    /* Logos row */
+
+    .logos {
+      margin-top: 2.5rem;
+      padding: 1.2rem 1rem;
+      border-radius: 16px;
+      border: 1px dashed var(--border);
+      background: rgba(8, 10, 18, 0.9);
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    .logos-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-top: 0.6rem;
+    }
+
+    .logo-pill {
+      padding: 0.3rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      font-size: 0.75rem;
+      color: #e5e7eb;
+    }
+
+    /* Resources */
+
+    #resources {
+      background: var(--bg-alt);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .resource-grid {
+      display: grid;
+      gap: 1.6rem;
+      margin-top: 2.2rem;
+    }
+
+    @media (min-width: 900px) {
+      .resource-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    .resource-card {
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      background: radial-gradient(circle at top left, #181c2d, #05060a 70%);
+      padding: 1.3rem 1.2rem 1.4rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+    }
+
+    .resource-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .resource-title {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .resource-body {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .resource-form {
+      margin-top: 0.7rem;
+      display: grid;
+      gap: 0.6rem;
+      font-size: 0.8rem;
+    }
+
+    .field-group {
+      display: grid;
+      gap: 0.25rem;
+    }
+
+    label {
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    input[type="text"],
+    input[type="email"] {
+      background: rgba(7, 9, 16, 0.95);
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      padding: 0.5rem 0.85rem;
+      color: var(--text);
+      font-size: 0.82rem;
+      outline: none;
+    }
+
+    input::placeholder {
+      color: rgba(163, 163, 176, 0.6);
+    }
+
+    .resource-note {
+      font-size: 0.72rem;
+      color: var(--muted);
+      opacity: 0.9;
+    }
+
+    /* Testimonials */
+
+    #testimonials {
+      background: var(--bg);
+    }
+
+    .testimonials-grid {
+      display: grid;
+      gap: 1.6rem;
+      margin-top: 2.2rem;
+    }
+
+    @media (min-width: 900px) {
+      .testimonials-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    .testimonial-card {
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      background: radial-gradient(circle at top, #141827, #05060a 70%);
+      padding: 1.3rem 1.2rem 1.4rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .testimonial-name {
+      margin-top: 1rem;
+      font-size: 0.85rem;
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .testimonial-role {
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    /* Newsletter */
+
+    #newsletter {
+      background: var(--bg-alt);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .newsletter-wrap {
+      margin-top: 2rem;
+      display: grid;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    @media (min-width: 900px) {
+      .newsletter-wrap {
+        grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.4fr);
+      }
+    }
+
+    .newsletter-note {
+      font-size: 0.9rem;
+      color: var(--muted);
+      max-width: 420px;
+    }
+
+    .newsletter-box {
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      background: radial-gradient(circle at top, #181c2d, #05060a 65%);
+      padding: 1.4rem 1.5rem;
+    }
+
+    .newsletter-box form {
+      display: grid;
+      gap: 0.7rem;
+    }
+
+    .newsletter-inline {
+      display: grid;
+      gap: 0.7rem;
+    }
+
+    @media (min-width: 600px) {
+      .newsletter-inline {
+        grid-template-columns: 1.1fr 1.1fr auto;
+      }
+    }
+
+    .helper-text {
+      font-size: 0.7rem;
+      color: var(--muted);
+      margin-top: 0.3rem;
+    }
+
+    /* Contact */
+
+    #contact {
+      background: #05060a;
+    }
+
+    .contact-grid {
+      display: grid;
+      gap: 2.2rem;
+      margin-top: 2.2rem;
+      align-items: flex-start;
+    }
+
+    @media (min-width: 900px) {
+      .contact-grid {
+        grid-template-columns: minmax(0, 1.3fr) minmax(0, 1.2fr);
+      }
+    }
+
+    .contact-meta {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .contact-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 1rem;
+    }
+
+    .contact-chip {
+      padding: 0.3rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      font-size: 0.78rem;
+      color: #e5e7eb;
+    }
+
+    .contact-links {
+      margin-top: 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.82rem;
+    }
+
+    .contact-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: var(--accent);
+    }
+
+    .contact-form-card {
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      background: radial-gradient(circle at top, #181c2d, #05060a 65%);
+      padding: 1.4rem 1.5rem;
+      font-size: 0.85rem;
+    }
+
+    .contact-form-card form {
+      display: grid;
+      gap: 0.8rem;
+      margin-top: 0.8rem;
+    }
+
+    textarea {
+      background: rgba(7, 9, 16, 0.95);
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      padding: 0.65rem 0.85rem;
+      min-height: 96px;
+      resize: vertical;
+      color: var(--text);
+      font-size: 0.82rem;
+      outline: none;
+      font-family: inherit;
+    }
+
+    /* Footer */
+
+    footer {
+      border-top: 1px solid var(--border);
+      background: #05060a;
+      padding: 1.2rem 0 1.6rem;
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    .footer-row {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.8rem;
+      align-items: center;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+    }
+
+    .footer-links a {
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- Header -->
+    <header>
+      <nav class="nav">
+        <div class="nav-left">
+          <div class="nav-mark"></div>
+          <div>
+            <div class="nav-name">Sanjay Tamata</div>
+            <div class="nav-role">Technologist & Cybersecurity Engineer</div>
+          </div>
+        </div>
+
+        <button class="nav-menu-toggle" id="navToggle">
+          Menu
+          <span style="font-size: 0.9rem;">☰</span>
+        </button>
+
+        <div class="nav-right">
+          <a href="#story" class="nav-link">My Story</a>
+          <a href="#work" class="nav-link">Work</a>
+          <a href="#resources" class="nav-link">Resources</a>
+          <a href="#contact" class="nav-link">Contact</a>
+          <a href="#newsletter" class="nav-cta">
+            <span class="nav-cta-dot"></span>
+            <span>Newsletter</span>
+          </a>
+        </div>
+      </nav>
+
+      <!-- Mobile nav -->
+      <div class="nav-mobile" id="navMobile">
+        <a href="#story" class="nav-link">My Story</a>
+        <a href="#work" class="nav-link">Work</a>
+        <a href="#resources" class="nav-link">Resources</a>
+        <a href="#contact" class="nav-link">Contact</a>
+        <a href="#newsletter" class="nav-link">Newsletter</a>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero -->
+      <section id="hero">
+        <div class="container hero-grid">
+          <div>
+            <div class="hero-kickers">
+              <span class="hero-kicker-pill">Cybersecurity</span>
+              <span class="hero-kicker-pill">Data & Analytics</span>
+              <span class="hero-location">
+                <span class="hero-location-dot"></span>
+                Sydney · Working with the world
+              </span>
+            </div>
+
+            <h1 class="hero-heading">
+              <span>I build & secure</span>
+              <span>systems that scale.</span>
+            </h1>
+
+            <p class="hero-tagline">
+              I help organisations turn messy data and fragile systems into secure, reliable
+              products—combining engineering, analytics, and clear communication.
+            </p>
+
+            <div class="hero-actions">
+              <a href="#contact" class="btn-primary">
+                Work with me
+                <span>↗</span>
+              </a>
+              <a href="#story" class="btn-ghost">
+                Read my story
+              </a>
+            </div>
+
+            <div class="hero-metrics">
+              <div>
+                <div class="hero-metric-label">Experience</div>
+                <div class="hero-metric-value">7+ years in public & private sector</div>
+              </div>
+              <div>
+                <div class="hero-metric-label">Focus</div>
+                <div class="hero-metric-value">Cybersecurity · Data · Product</div>
+              </div>
+              <div>
+                <div class="hero-metric-label">Availability</div>
+                <div class="hero-metric-value">Open for 2026 collaborations</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-visual">
+            <div class="hero-card">
+              <div class="hero-card-header">
+                <div>
+                  <div class="hero-card-title">System map: from chaos to clarity</div>
+                  <p style="font-size: 0.78rem; color: var(--muted); max-width: 220px; margin-top: 0.4rem;">
+                    Architecture, risk, and strategy distilled into language that founders,
+                    engineers, and executives can all act on.
+                  </p>
+                </div>
+                <div class="hero-avatar" aria-hidden="true"></div>
+              </div>
+
+              <div class="hero-card-main">
+                <h2>Security as a product advantage</h2>
+                <p>
+                  I bridge deep technical detail with business goals so security becomes a growth
+                  enabler, not a last-minute patch.
+                </p>
+              </div>
+
+              <div class="hero-card-footer">
+                <div class="hero-badges">
+                  <div class="hero-badge">Threat modeling</div>
+                  <div class="hero-badge">Architecture reviews</div>
+                  <div class="hero-badge">Data-driven decisions</div>
+                </div>
+                <div class="hero-card-chip">
+                  Available for advisory
+                </div>
+              </div>
+
+              <div class="hero-glow"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Story -->
+      <section id="story">
+        <div class="container story-grid">
+          <div>
+            <div class="section-tag">My Story</div>
+            <h2 class="section-title">You know the tech. I speak the language.</h2>
+            <p class="section-subtitle">
+              I’ve worked across government, startups, and academia—designing systems, building
+              products, and keeping critical data safe.
+            </p>
+
+            <div class="story-body">
+              <p>
+                I started in engineering roles where “security” meant locked server rooms and
+                last-minute audits. Over time, I realised the most secure organisations weren’t
+                just using better tools—they were asking better questions.
+              </p>
+              <p>
+                Since then, I’ve focused on connecting strategy, security, and software delivery:
+                aligning teams, simplifying complex architectures, and translating risk into clear
+                trade-offs that leaders can act on.
+              </p>
+
+              <div class="story-highlight">
+                <strong>What I believe</strong>
+                Security isn’t about saying “no.” It’s about designing systems that make the safe
+                path the easiest path—for users, engineers, and the business.
+              </div>
+            </div>
+          </div>
+
+          <div class="story-meta">
+            <div class="story-meta-card">
+              <div class="story-meta-label">Experience</div>
+              <div class="story-meta-value">
+                Government IT, data platforms, cybersecurity engineering, and analytics projects.
+              </div>
+            </div>
+            <div class="story-meta-card">
+              <div class="story-meta-label">How I work</div>
+              <div class="story-meta-value">
+                Collaborative, practical, and outcome-driven—less theory, more implementation.
+              </div>
+            </div>
+            <div class="story-meta-card">
+              <div class="story-meta-label">What I enjoy</div>
+              <div class="story-meta-value">
+                Turning vague problems into clear diagrams, roadmaps, and repeatable processes.
+              </div>
+            </div>
+            <div class="story-meta-card">
+              <div class="story-meta-label">Currently</div>
+              <div class="story-meta-value">
+                Deepening my focus on cybersecurity engineering and modern data stacks.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Work / Ventures -->
+      <section id="work">
+        <div class="container">
+          <div class="section-tag">Work</div>
+          <h2 class="section-title">What I build & advise on</h2>
+          <p class="section-subtitle">
+            From secure architecture to analytics and AI-powered tools, I work with teams who
+            want to design resilient systems from day one.
+          </p>
+
+          <div class="work-grid">
+            <article class="work-card">
+              <div class="work-pill">Security Architecture</div>
+              <h3 class="work-title">Cybersecurity Engineering & Threat Modeling</h3>
+              <p class="work-body">
+                Helping teams map their systems, identify critical paths, and design controls that
+                are realistic, testable, and aligned with business goals.
+              </p>
+              <a href="#contact" class="work-link">
+                Discuss a security review
+                <span>↗</span>
+              </a>
+            </article>
+
+            <article class="work-card">
+              <div class="work-pill">Data & Analytics</div>
+              <h3 class="work-title">Insight-Driven Decision Making</h3>
+              <p class="work-body">
+                Building data flows, dashboards, and checks so stakeholders trust the numbers—and
+                can act on them with confidence.
+              </p>
+              <a href="#contact" class="work-link">
+                Talk about a data project
+                <span>↗</span>
+              </a>
+            </article>
+
+            <article class="work-card">
+              <div class="work-pill">Advisory</div>
+              <h3 class="work-title">Fractional Tech & Security Partner</h3>
+              <p class="work-body">
+                For founders and leaders who need a technical sounding board: roadmap reviews,
+                vendor selection, and security by design.
+              </p>
+              <a href="#contact" class="work-link">
+                Request advisory details
+                <span>↗</span>
+              </a>
+            </article>
+          </div>
+
+          <div class="logos">
+            <span>Previous impact across:</span>
+            <div class="logos-row">
+              <span class="logo-pill">Government IT</span>
+              <span class="logo-pill">Financial systems</span>
+              <span class="logo-pill">Analytics platforms</span>
+              <span class="logo-pill">Cybersecurity projects</span>
+              <span class="logo-pill">Education & research</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Resources -->
+      <section id="resources">
+        <div class="container">
+          <div class="section-tag">Resources</div>
+          <h2 class="section-title">Free guides for builders</h2>
+          <p class="section-subtitle">
+            Practical, no-fluff PDFs you can share with your team. Add your email to get new ones
+            as I publish them.
+          </p>
+
+          <div class="resource-grid">
+            <article class="resource-card">
+              <div class="resource-label">eGuide · Free</div>
+              <h3 class="resource-title">Write your technical bio without cringing</h3>
+              <p class="resource-body">
+                A simple framework to turn your experience into a clear, confident narrative that
+                works on LinkedIn, resumes, and speaker pages.
+              </p>
+
+              <form class="resource-form">
+                <div class="field-group">
+                  <label for="bio-name">Name</label>
+                  <input id="bio-name" type="text" placeholder="Your name" />
+                </div>
+                <div class="field-group">
+                  <label for="bio-email">Email</label>
+                  <input id="bio-email" type="email" placeholder="you@example.com" />
+                </div>
+                <button class="btn-primary" type="button">
+                  Get the guide
+                </button>
+                <p class="resource-note">
+                  Demo only – wire this form up to your email tool when you deploy.
+                </p>
+              </form>
+            </article>
+
+            <article class="resource-card">
+              <div class="resource-label">Checklist · Free</div>
+              <h3 class="resource-title">Security questions to ask before launch</h3>
+              <p class="resource-body">
+                A one-page checklist you can walk through with your team before shipping a new
+                feature or integrating a third-party tool.
+              </p>
+
+              <form class="resource-form">
+                <div class="field-group">
+                  <label for="sec-email">Email</label>
+                  <input id="sec-email" type="email" placeholder="you@example.com" />
+                </div>
+                <button class="btn-ghost" type="button">
+                  Email me the checklist
+                </button>
+              </form>
+            </article>
+
+            <article class="resource-card">
+              <div class="resource-label">Template · Free</div>
+              <h3 class="resource-title">One-page architecture overview</h3>
+              <p class="resource-body">
+                A lightweight template to map your system, dependencies, and data flows so
+                onboarding and audits become much easier.
+              </p>
+
+              <form class="resource-form">
+                <div class="field-group">
+                  <label for="arch-email">Email</label>
+                  <input id="arch-email" type="email" placeholder="you@example.com" />
+                </div>
+                <button class="btn-ghost" type="button">
+                  Send me the template
+                </button>
+              </form>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonials -->
+      <section id="testimonials">
+        <div class="container">
+          <div class="section-tag">Kind words</div>
+          <h2 class="section-title">What collaborators say</h2>
+          <p class="section-subtitle">
+            Placeholder text for now—swap this with real quotes when you’re ready to go live.
+          </p>
+
+          <div class="testimonials-grid">
+            <article class="testimonial-card">
+              “Sanjay has a rare ability to move between architecture diagrams and practical
+              next steps. Our team walked away with clarity instead of a 40-page report.”
+              <div class="testimonial-name">Person One</div>
+              <div class="testimonial-role">CTO, Example Co.</div>
+            </article>
+
+            <article class="testimonial-card">
+              “He translated complex security trade-offs into language our leadership team could
+              actually use to make decisions.”
+              <div class="testimonial-name">Person Two</div>
+              <div class="testimonial-role">Head of Product, Example Org</div>
+            </article>
+
+            <article class="testimonial-card">
+              “We uncovered hidden risks, simplified our architecture, and left with a roadmap
+              we could start executing the same week.”
+              <div class="testimonial-name">Person Three</div>
+              <div class="testimonial-role">Founder, Startup Name</div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Newsletter -->
+      <section id="newsletter">
+        <div class="container newsletter-wrap">
+          <div>
+            <div class="section-tag">Newsletter</div>
+            <h2 class="section-title">A short email worth opening</h2>
+            <p class="newsletter-note">
+              I occasionally share notes on security, data, and building resilient systems—no
+              spam, no growth hacks, just real stories and tools you can steal.
+            </p>
+          </div>
+
+          <div class="newsletter-box">
+            <form>
+              <div class="newsletter-inline">
+                <div class="field-group">
+                  <label for="nl-name">Name</label>
+                  <input id="nl-name" type="text" placeholder="Your name" />
+                </div>
+                <div class="field-group">
+                  <label for="nl-email">Email</label>
+                  <input id="nl-email" type="email" placeholder="you@example.com" />
+                </div>
+                <button class="btn-primary" type="button">
+                  Join the list
+                </button>
+              </div>
+              <p class="helper-text">
+                You can connect this form to Substack, Mailchimp, or any email service when you
+                deploy.
+              </p>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact">
+        <div class="container">
+          <div class="section-tag">Contact</div>
+          <h2 class="section-title">Let’s talk about your system</h2>
+          <p class="section-subtitle">
+            A short project brief is enough to start. I’ll reply with next steps, timelines, and
+            whether I’m a good fit—or recommend someone who is.
+          </p>
+
+          <div class="contact-grid">
+            <div class="contact-meta">
+              <p>
+                I’m most helpful when you have a clear problem: a migration coming up, an audit
+                on the horizon, or a system you’re nervous to grow on.
+              </p>
+
+              <div class="contact-chips">
+                <span class="contact-chip">Security reviews</span>
+                <span class="contact-chip">Architecture mapping</span>
+                <span class="contact-chip">Data projects</span>
+                <span class="contact-chip">Advisory calls</span>
+              </div>
+
+              <div class="contact-links">
+                <a href="mailto:youremail@example.com">
+                  Email
+                  <span>↗</span>
+                </a>
+                <a href="https://www.linkedin.com" target="_blank" rel="noreferrer">
+                  LinkedIn
+                  <span>↗</span>
+                </a>
+                <a href="#newsletter">
+                  Newsletter
+                  <span>↗</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="contact-form-card">
+              <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.16em; color: var(--muted);">
+                Quick intro form
+              </div>
+              <form>
+                <div class="field-group">
+                  <label for="c-name">Name</label>
+                  <input id="c-name" type="text" placeholder="Your name" />
+                </div>
+                <div class="field-group">
+                  <label for="c-email">Email</label>
+                  <input id="c-email" type="email" placeholder="you@example.com" />
+                </div>
+                <div class="field-group">
+                  <label for="c-company">Company / organisation</label>
+                  <input id="c-company" type="text" placeholder="Optional" />
+                </div>
+                <div class="field-group">
+                  <label for="c-message">What would you like help with?</label>
+                  <textarea id="c-message" placeholder="A few sentences is enough."></textarea>
+                </div>
+                <button class="btn-primary" type="button">
+                  Send (placeholder)
+                </button>
+                <p class="helper-text">
+                  This form is static. Swap it for a real form handler (Netlify, Formspree,
+                  custom backend, etc.) when you deploy.
+                </p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-row">
+        <div>© <span id="year"></span> Sanjay Tamata. All rights reserved.</div>
+        <div class="footer-links">
+          <a href="#hero">Back to top</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // Mobile nav toggle
+    const navToggle = document.getElementById("navToggle");
+    const navMobile = document.getElementById("navMobile");
+
+    if (navToggle && navMobile) {
+      navToggle.addEventListener("click", () => {
+        navMobile.classList.toggle("show");
+      });
+
+      navMobile.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          navMobile.classList.remove("show");
+        });
+      });
+    }
+
+    // Dynamic year in footer
+    const yearEl = document.getElementById("year");
+    if (yearEl) {
+      yearEl.textContent = new Date().getFullYear();
+    }
+  </script>
+</body>
+</html>
